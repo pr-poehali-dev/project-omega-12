@@ -9,6 +9,7 @@ const ABOUT_BG_URL = "https://cdn.poehali.dev/projects/00b48ea9-6036-45e2-b9e8-7
 const LAND_BG_URL = "https://cdn.poehali.dev/projects/00b48ea9-6036-45e2-b9e8-7b33e17c233f/files/72d12cae-d685-405b-9855-30d69d150205.jpg"
 const DESIGN_BG_URL = "https://cdn.poehali.dev/projects/00b48ea9-6036-45e2-b9e8-7b33e17c233f/files/3d549cba-2cf4-4274-8dba-313d55217816.jpg"
 const CONTROL_BG_URL = "https://cdn.poehali.dev/projects/00b48ea9-6036-45e2-b9e8-7b33e17c233f/files/50327f62-48fe-472a-a23b-3e023b51db4e.jpg"
+const JOIN_BG_URL = "https://cdn.poehali.dev/projects/00b48ea9-6036-45e2-b9e8-7b33e17c233f/files/3431a4ea-3f2b-4521-8500-729d7f2eea46.jpg"
 
 function Logo() {
   return (
@@ -25,6 +26,7 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
   const isLand = id === 'land'
   const isDesign = id === 'design'
   const isControl = id === 'control'
+  const isJoin = id === 'join'
 
   return (
     <section
@@ -74,6 +76,17 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
             className="w-full h-full object-cover grayscale opacity-30"
           />
           <div className="absolute inset-0 bg-black/65" />
+        </div>
+      )}
+
+      {isJoin && (
+        <div className="absolute inset-0 z-0">
+          <img
+            src={JOIN_BG_URL}
+            alt="Зарисовка дома мечты клиента"
+            className="w-full h-full object-cover opacity-50"
+          />
+          <div className="absolute inset-0 bg-black/60" />
         </div>
       )}
 
