@@ -3,7 +3,7 @@ import Icon from "@/components/ui/icon"
 
 const TEAM_URL = "https://cdn.poehali.dev/projects/00b48ea9-6036-45e2-b9e8-7b33e17c233f/files/e890c65a-f658-41fb-923d-093d7a755a7a.jpg"
 
-const LOGO_URL = "https://cdn.poehali.dev/projects/00b48ea9-6036-45e2-b9e8-7b33e17c233f/files/437cb4f4-c747-4809-985f-a29156d86869.jpg"
+const LOGO_URL = "https://cdn.poehali.dev/projects/00b48ea9-6036-45e2-b9e8-7b33e17c233f/files/255ba6a4-44e6-4637-9f25-ee0c40e85b95.jpg"
 
 function Logo() {
   return (
