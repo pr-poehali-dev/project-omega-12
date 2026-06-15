@@ -1,7 +1,9 @@
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import Icon from "@/components/ui/icon"
 import type { SectionProps } from "@/types"
+import OrderModal from "@/components/OrderModal"
 
 const LOGO_URL = "https://cdn.poehali.dev/projects/00b48ea9-6036-45e2-b9e8-7b33e17c233f/files/255ba6a4-44e6-4637-9f25-ee0c40e85b95.jpg"
 const HERO_BG_URL = "https://cdn.poehali.dev/projects/00b48ea9-6036-45e2-b9e8-7b33e17c233f/files/636a3e2c-3edd-438a-9ee9-f0f3125d34dc.jpg"
@@ -21,6 +23,7 @@ function Logo() {
 }
 
 export default function Section({ id, title, subtitle, content, isActive, showButton, buttonText, icon, extraContent }: SectionProps & { icon?: string; extraContent?: React.ReactNode }) {
+  const [modalOpen, setModalOpen] = useState(false)
   const isHero = id === 'hero'
   const isAbout = id === 'about'
   const isLand = id === 'land'
@@ -167,6 +170,7 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
             <Button
               variant="outline"
               size="lg"
+              onClick={() => setModalOpen(true)}
               className="text-amber-400 bg-transparent border-amber-400 hover:bg-amber-400 hover:text-black transition-colors"
             >
               {buttonText}
@@ -174,6 +178,8 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
           </motion.div>
         )}
       </div>
+
+      <OrderModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   )
 }
